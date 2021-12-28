@@ -50,7 +50,7 @@
 }
   
 .login-btn, .signup-btn {
-    background-color: #454ad6;
+    background-color: #00CA81;
     color: #fff;
     border: 0;
     width: 100%;
@@ -58,6 +58,7 @@
     border-radius: 4px;
     font-weight: bold;
     font-size: 16px;
+    cursor: pointer
 }
   
 .signup-container {

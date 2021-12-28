@@ -1,5 +1,5 @@
 import authHeader from '../utils/AuthService';
-const ROOT_URL = 'http://localhost:4000';
+const ROOT_URL = 'https://mc-paymo.herokuapp.com';
  
 export async function loginUser(dispatch, loginPayload) {
   try {
@@ -54,7 +54,7 @@ export async function signupUser(dispatch, signupPayload) {
 }
 
 export async function updateUser(dispatch, token) {
-    let response = await fetch('http://localhost:4000/api/user/me', {headers: authHeader({token})})
+    let response = await fetch('https://mc-paymo.herokuapp.com/api/user/me', {headers: authHeader({token})})
     let data = await response.json()
     let userPayload = {token, user: data }
     dispatch({ type: 'UPDATE_USER', payload: userPayload })

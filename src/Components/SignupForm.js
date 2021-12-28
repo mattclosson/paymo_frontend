@@ -21,7 +21,7 @@ const SignupForm = () => {
         try {
             let response = await signupUser(dispatch, payload)
             if (!response) return
-            window.location.assign(`https://connect.stripe.com/express/oauth/authorize?client_id=${client_id}&redirect_uri=http://localhost:4000/api/stripe/token&stripe_user%5Bbusiness_type%5D=individual&stripe_user%5Bbusiness_name%5D=&stripe_user%5Bfirst_name%5D=${payload.firstName}&stripe_user%5Blast_name%5D=${payload.lastName}&stripe_user%5Bemail%5D=${payload.email}&stripe_user%5Bcountry%5D=US#/`)
+            window.location.assign(`https://connect.stripe.com/express/oauth/authorize?client_id=${client_id}&redirect_uri=https://mc-paymo.herokuapp.com/api/stripe/token&stripe_user%5Bbusiness_type%5D=individual&stripe_user%5Bbusiness_name%5D=&stripe_user%5Bfirst_name%5D=${payload.firstName}&stripe_user%5Blast_name%5D=${payload.lastName}&stripe_user%5Bemail%5D=${payload.email}&stripe_user%5Bcountry%5D=US#/`)
         } catch (err) {
             console.log(err)
         }

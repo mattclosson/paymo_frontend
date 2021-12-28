@@ -13,7 +13,7 @@ const Show = (props) => {
 
     const getInvoice = async () => {
         const token = userDetails.token
-        const response = await fetch(`http://localhost:4000/api/invoice/${urlParams.id}`, {headers: authHeader({token})})
+        const response = await fetch(`https://mc-paymo.herokuapp.com/api/invoice/${urlParams.id}`, {headers: authHeader({token})})
         const data = await response.json()
         console.log(data)
         setInvoice(data)
@@ -30,7 +30,7 @@ const Show = (props) => {
 
     const handleSend = async () => {
         const token = userDetails.token
-        const response = await fetch(`http://localhost:4000/api/invoice/send/${invoice.id}`, {headers: authHeader({token})})
+        const response = await fetch(`https://mc-paymo.herokuapp.com/api/invoice/send/${invoice.id}`, {headers: authHeader({token})})
         const data = await response.json()
         getInvoice()
     }
@@ -62,7 +62,7 @@ const Show = (props) => {
             {invoice.lines ? <div>{invoice.lines.data.map((product, index) => (
                 <div className="invoice-container" key={index}>
                     <div>{product.description}</div>
-                    <div>{product.price.unit_amount}</div>
+                    <div>{formatMoney(product.price.unit_amount)}</div>
                     <div>{product.quantity}</div>
                     <div>{formatMoney(product.amount)}</div>
                 </div>

@@ -3,7 +3,7 @@ import { useAuthDispatch, logout, useAuthState, updateUser } from '../Context';
 import { useNavigate } from "react-router-dom"
 import { useEffect } from 'react/cjs/react.development';
 
-const ROOT_URL = 'http://localhost:4000';
+const ROOT_URL = 'https://mc-paymo.herokuapp.com';
 
 function useQuery() {
     return new URLSearchParams(window.location.search);
@@ -12,7 +12,7 @@ function useQuery() {
 const sendToken = async (props) => {
     // console.log(props)
     const token = props.token
-    let response = await fetch(`http://localhost:4000/api/stripe/token?code=${props.code}`)
+    let response = await fetch(`https://mc-paymo.herokuapp.com/api/stripe/token?code=${props.code}`)
     let data = await response.json()
     const stripe_user_id = data.expressAuthorized.stripe_user_id
     let newUser = await updateStripeId({stripe_user_id, token})
@@ -23,7 +23,7 @@ const updateStripeId = async (props) => {
     const token = props.token
     console.log(token)
     const stripe_user_id = props.stripe_user_id
-    let response = await fetch('http://localhost:4000/api/user/update', {
+    let response = await fetch('https://mc-paymo.herokuapp.com/api/user/update', {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${token}`,

@@ -47,15 +47,16 @@ export const AuthReducer = (initialState, action) => {
           ...initialState,
           loading: true
         };
-      case "SIGNUP_SUCCESS":
+
+    case "SIGNUP_SUCCESS":
         return {
-          ...initialState,
-          user: action.payload.user,
-          token: action.payload.token,
-          loading: false
+            ...initialState,
+            user: action.payload.user,
+            token: action.payload.token,
+            loading: false
         };
    
-      case "SIGNUP_ERROR":
+    case "SIGNUP_ERROR":
         return {
           ...initialState,
           loading: false,

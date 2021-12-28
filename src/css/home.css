@@ -18,7 +18,7 @@
 .home-header {
     padding-top: 10px;
     padding-bottom: 90px;
-    background-color: #454ad6;
+    background-color: #00CA81;
     color: #fff;
 }
 
@@ -42,12 +42,18 @@
 
 .get-started {
     background-color: #fff;
-    color: #454AD6;
+    color: #00CA81;
     border: 0;
     padding: 15px 23px;
     font-weight: bold;
     font-size: 17px;
     border-radius: 35px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 15px;
+    display: block;
+    width: 100px;
+    text-align: center;
 }
 
 .illustration img {

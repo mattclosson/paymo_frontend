@@ -13,12 +13,12 @@ const Dashboard = () => {
 
     const getAllInvoices = async () => {
         const token = userDetails.token
-        let response = await fetch('http://localhost:4000/api/invoice/stripe', {headers: authHeader({token})})
+        let response = await fetch('https://mc-paymo.herokuapp.com/api/invoice/stripe', {headers: authHeader({token})})
         let data = await response.json()
         let dataArray = await data.data
-        setInvoices(dataArray)
-        setOriginalInvoices(dataArray)
-        console.log(dataArray)
+        const allInvoices = dataArray.filter((invoice) => invoice.status != "void")
+        setInvoices(allInvoices)
+        setOriginalInvoices(allInvoices)
     }
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const Dashboard = () => {
     const handleDelete = async (e) => {
         e.preventDefault()
         const id = e.target.value
-        await fetch(`http://localhost:4000/api/invoice/${id}`, {
+        await fetch(`https://mc-paymo.herokuapp.com/api/invoice/${id}`, {
             method: "DELETE"
         })
         getAllInvoices()
