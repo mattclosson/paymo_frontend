@@ -17,6 +17,7 @@ function Home() {
     
     return (
         <div className="home-container">
+            <div className="test-mode">Paymo is in Stripe test mode. No real transactions are processed nor back accounts stored. </div>
             <div className="home-header">
                 <div className="home-nav">
                     <div className="logo">

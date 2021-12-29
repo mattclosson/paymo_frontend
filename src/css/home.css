@@ -3,7 +3,7 @@
 }
 
 .home-nav {
-    padding: 0 30px;
+    padding: 9px 40px;
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -20,6 +20,10 @@
     padding-bottom: 90px;
     background-color: #00CA81;
     color: #fff;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 22px;
+    border-radius: 40px;
 }
 
 .home-header-content {
@@ -27,6 +31,21 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.test-mode {
+    background: #ffe59d;
+    max-width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 12px;
+    margin-top: 20px;
+    padding: 10px 16px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #6a5a2c;
+    font-size: 13px;
+    height: 37px;
 }
 
 .details {
