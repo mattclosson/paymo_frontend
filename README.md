@@ -8,6 +8,11 @@ To get the backend of this app, go to this repo: https://github.com/mattclosson/
 
 Clone this repo and cd into folder 
 
+Add your own .env varibles: 
+
+- REACT_APP_clientId: Client side Stripe ID
+- REACT_APP_BACKEND: Your backend URL 
+
 Run `npm install` to install the dependencies 
 
 Run `npm start` to start the application
