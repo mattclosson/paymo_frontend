@@ -49,7 +49,7 @@ const InvoiceForm = () => {
             userId: userDetails.user._id
         }
         
-        let response = await fetch("https://mc-paymo.herokuapp.com/api/invoice/new", {
+        let response = await fetch(`${PROCESS.env.REACT_APP_BACKEND}/api/invoice/new`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),

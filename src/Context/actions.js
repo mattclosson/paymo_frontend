@@ -54,7 +54,7 @@ export async function signupUser(dispatch, signupPayload) {
 }
 
 export async function updateUser(dispatch, token) {
-    let response = await fetch('https://mc-paymo.herokuapp.com/api/user/me', {headers: authHeader({token})})
+    let response = await fetch(`${PROCESS.env.REACT_APP_BACKEND}/api/user/me`, {headers: authHeader({token})})
     let data = await response.json()
     let userPayload = {token, user: data }
     dispatch({ type: 'UPDATE_USER', payload: userPayload })

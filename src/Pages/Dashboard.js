@@ -13,7 +13,7 @@ const Dashboard = () => {
 
     const getAllInvoices = async () => {
         const token = userDetails.token
-        let response = await fetch('https://mc-paymo.herokuapp.com/api/invoice/stripe', {headers: authHeader({token})})
+        let response = await fetch(`${PROCESS.env.REACT_APP_BACKEND}/api/invoice/stripe`, {headers: authHeader({token})})
         let data = await response.json()
         let dataArray = await data.data
         const allInvoices = dataArray.filter((invoice) => invoice.status != "void")
@@ -28,7 +28,7 @@ const Dashboard = () => {
     const handleDelete = async (e) => {
         e.preventDefault()
         const id = e.target.value
-        await fetch(`https://mc-paymo.herokuapp.com/api/invoice/${id}`, {
+        await fetch(`${PROCESS.env.REACT_APP_BACKEND}/api/invoice/${id}`, {
             method: "DELETE"
         })
         getAllInvoices()
